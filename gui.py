@@ -24,11 +24,15 @@ first_name = ctk.CTkLabel(root, text="First Name")
 first_name.place(x=15, y=60)
 surname = ctk.CTkLabel(root, text="Surname")
 surname.place(x=15, y=95)
+email = ctk.CTkLabel(root, text="Email Address")
+email.place(x=15, y=130)
 
 # create entry buttons for personal info
 first_name_entry = ctk.CTkEntry(root)
 first_name_entry.place(x=85, y=60)
 surname_entry = ctk.CTkEntry(root)
 surname_entry.place(x=85, y=95)
+email_entry = ctk.CTkEntry(root)
+email_entry.place(x=105, y=130)
 
 root.mainloop()
