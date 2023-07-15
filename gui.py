@@ -1,7 +1,8 @@
 # import modules
 import tkinter as tk
+from CTkMessagebox import CTkMessagebox
 import customtkinter as ctk
-from info_class import ContactTracing
+from functools import partial
 
 # change theme to dark
 ctk.set_appearance_mode("dark")
@@ -29,6 +30,23 @@ surname = ctk.StringVar()
 email = ctk.StringVar()
 phone = ctk.StringVar()
 address = ctk.StringVar()
+
+
+# create functions
+def add_entry(fn, ln, ea, pn, ha):
+    first_name1 = fn.get()
+    last_name = ln.get()
+    email_address = ea.get()
+    phone_number = pn.get()
+    home_address = ha.get()
+    with open("data_entries.txt", "a") as f:
+        f.write(f"Name: {last_name}, {first_name1}\n")
+        f.write(f"Email Address: {email_address}\n")
+        f.write(f"Phone Number: {phone_number}\n")
+        f.write(f"Home Address: {home_address}\n")
+        f.write("\n")
+    CTkMessagebox(title="Notice", message="Entry Added!", icon="check")
+
 
 # create labels for personal info
 first_name_lbl = ctk.CTkLabel(root, text="First Name")
@@ -73,5 +91,8 @@ phone2_entry = ctk.CTkEntry(root, width=175)
 phone2_entry.place(x=105, y=340)
 address2_entry = ctk.CTkEntry(root, width=275)
 address2_entry.place(x=105, y=375)
+
+enter_data = partial(add_entry, first_name, surname, email, phone, address)
+add_entry_button = ctk.CTkButton(root, text="Add Entry", command=enter_data).grid(row=3, column=0)
 
 root.mainloop()
