@@ -58,5 +58,7 @@ first_name2_entry = ctk.CTkEntry(root)
 first_name2_entry.place(x=85, y=270)
 surname2_entry = ctk.CTkEntry(root)
 surname2_entry.place(x=85, y=305)
+phone2_entry = ctk.CTkEntry(root, width=175)
+phone2_entry.place(x=105, y=340)
 
 root.mainloop()
