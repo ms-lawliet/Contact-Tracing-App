@@ -8,3 +8,13 @@ class ContactTracing:
         street = (st.get())
         city_or_province = (cprov.get())
         zip_code = (zipc.get())
+
+ def emergency_contact(self, fn, sn, st, phone, cprov, zipc, rs):
+        first_name = (fn.get())
+        surname = (sn.get())
+        phone_number = (phone.get())
+        street = (st.get())
+        city_or_province = (cprov.get())
+        zip_code = (zipc.get())
+        relationship = (rs.get())
+
