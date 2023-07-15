@@ -1,13 +1,13 @@
 # import modules
 import tkinter as tk
-import customtkinter
+import customtkinter as ctk
 from info_class import ContactTracing
 
 # change theme to dark
-customtkinter.set_appearance_mode("dark")
+ctk.set_appearance_mode("dark")
 
 # create method
-root = customtkinter.CTk()
+root = ctk.CTk()
 root.geometry("475x560")
 root.title("Contact Tracing App")
 
