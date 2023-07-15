@@ -21,7 +21,7 @@ category1.place(x=5, y=30)
 category2 = ctk.CTkLabel(root, text="Emergency Contact")
 category2.place(x=5, y=240)
 
-# create labels for info
+# create labels for personal info
 first_name = ctk.CTkLabel(root, text="First Name")
 first_name.place(x=15, y=60)
 surname = ctk.CTkLabel(root, text="Surname")
@@ -32,12 +32,16 @@ phone = ctk.CTkLabel(root, text="Phone Number")
 phone.place(x=15, y=165)
 address = ctk.CTkLabel(root, text="Home Address")
 address.place(x=15, y=200)
+
+# create labels for emergency contact info
 first_name2 = ctk.CTkLabel(root, text="First Name")
 first_name2.place(x=15, y=270)
 surname2 = ctk.CTkLabel(root, text="Surname")
 surname2.place(x=15, y=305)
+phone2 = ctk.CTkLabel(root, text="Phone Number")
+phone2.place(x=15, y=340)
 
-# create entry buttons
+# create entry buttons for personal info
 first_name_entry = ctk.CTkEntry(root)
 first_name_entry.place(x=85, y=60)
 surname_entry = ctk.CTkEntry(root)
@@ -48,6 +52,8 @@ phone_entry = ctk.CTkEntry(root, width=175)
 phone_entry.place(x=105, y=165)
 address_entry = ctk.CTkEntry(root, width=275)
 address_entry.place(x=105, y=200)
+
+# create entry buttons for emergency contact info
 first_name2_entry = ctk.CTkEntry(root)
 first_name2_entry.place(x=85, y=270)
 surname2_entry = ctk.CTkEntry(root)
