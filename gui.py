@@ -18,6 +18,8 @@ title.place(x=175, y=10)
 # create label for each category
 category1 = ctk.CTkLabel(root, text="Personal Information")
 category1.place(x=5, y=30)
+category2 = ctk.CTkLabel(root, text="Emergency Contact")
+category2.place(x=5, y=240)
 
 # create label for personal info
 first_name = ctk.CTkLabel(root, text="First Name")
