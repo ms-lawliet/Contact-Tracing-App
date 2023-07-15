@@ -8,7 +8,7 @@ ctk.set_appearance_mode("dark")
 
 # create method
 root = ctk.CTk()
-root.geometry("475x560")
+root.geometry("475x600")
 root.title("Contact Tracing App")
 
 # create variables
