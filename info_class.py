@@ -1,11 +1,19 @@
 # create class for info
 class ContactTracing:
-    def personal_info(self, fn, sn, email, phone, address):
-        first_name = (fn.get())
-        surname = (sn.get())
-        email_address = (email.get())
-        phone_number = (phone.get())
-        address = (address.get())
+    def __int__(self, first_name, surname, email, phone, address):
+        self.first_name = first_name
+        self.surname = surname
+        self.email = email
+        self.phone = phone
+        self.address = address
+
+    def display_personal_info(self):
+        first_name = (self.first_name.get())
+        surname = (self.surname.get())
+        email_address = (self.email.get())
+        phone_number = (self.phone.get())
+        home_address = (self.address.get())
+        print(self.first_name, self.surname, self.email, self.phone, self.address)
 
     def emergency_contact(self, fn, sn, st, phone, address, rs):
         first_name = (fn.get())
