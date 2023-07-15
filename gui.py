@@ -12,7 +12,8 @@ root.geometry("475x600")
 root.title("Contact Tracing App")
 
 # create label for title
-
+label_title = ctk.CTkLabel(root, text="CONTACT TRACING")
+label_title.place(x=175, y=10)
 
 # create variables
 # create label for personal info
