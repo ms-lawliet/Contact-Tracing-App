@@ -40,6 +40,8 @@ surname2 = ctk.CTkLabel(root, text="Surname")
 surname2.place(x=15, y=305)
 phone2 = ctk.CTkLabel(root, text="Phone Number")
 phone2.place(x=15, y=340)
+address2 = ctk.CTkLabel(root, text="Home Address")
+address2.place(x=15, y=375)
 
 # create entry buttons for personal info
 first_name_entry = ctk.CTkEntry(root)
@@ -60,5 +62,7 @@ surname2_entry = ctk.CTkEntry(root)
 surname2_entry.place(x=85, y=305)
 phone2_entry = ctk.CTkEntry(root, width=175)
 phone2_entry.place(x=105, y=340)
+address2_entry = ctk.CTkEntry(root, width=275)
+address2_entry.place(x=105, y=375)
 
 root.mainloop()
