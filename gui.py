@@ -11,8 +11,11 @@ root = ctk.CTk()
 root.geometry("475x600")
 root.title("Contact Tracing App")
 
+# create label for title
+
+
 # create variables
-# create label
-# create entry buttons
+# create label for personal info
+# create entry buttons for personal info
 
 root.mainloop()
