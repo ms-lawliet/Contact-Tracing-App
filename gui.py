@@ -15,7 +15,12 @@ root.title("Contact Tracing App")
 title = ctk.CTkLabel(root, text="CONTACT TRACING")
 title.place(x=175, y=10)
 
+# create label for personal info category
+category1 = ctk.CTkLabel(root, text="Personal Information")
+category1.place(x=5, y=30)
+
 # create variables
+
 # create label for personal info
 # create entry buttons for personal info
 
