@@ -15,7 +15,7 @@ root.title("Contact Tracing App")
 title = ctk.CTkLabel(root, text="CONTACT TRACING")
 title.place(x=175, y=10)
 
-# create label for personal info category
+# create label for each category
 category1 = ctk.CTkLabel(root, text="Personal Information")
 category1.place(x=5, y=30)
 
@@ -26,6 +26,8 @@ surname = ctk.CTkLabel(root, text="Surname")
 surname.place(x=15, y=95)
 email = ctk.CTkLabel(root, text="Email Address")
 email.place(x=15, y=130)
+phone = ctk.CTkLabel(root, text="Phone Number")
+phone.place(x=15, y=165)
 
 # create entry buttons for personal info
 first_name_entry = ctk.CTkEntry(root)
@@ -34,5 +36,7 @@ surname_entry = ctk.CTkEntry(root)
 surname_entry.place(x=85, y=95)
 email_entry = ctk.CTkEntry(root)
 email_entry.place(x=105, y=130)
+phone_entry = ctk.CTkEntry(root)
+phone_entry.place(x=105, y=165)
 
 root.mainloop()
