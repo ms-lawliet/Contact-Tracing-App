@@ -21,8 +21,10 @@ category1.place(x=5, y=30)
 
 # create label for personal info
 first_name = ctk.CTkLabel(root, text="First Name")
-first_name.place(x=15, y=50)
+first_name.place(x=15, y=60)
 
 # create entry buttons for personal info
+first_name_entry = ctk.CTkEntry(root)
+first_name_entry.place(x=85, y=60)
 
 root.mainloop()
