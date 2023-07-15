@@ -9,7 +9,7 @@ class ContactTracing:
         city_or_province = (cprov.get())
         zip_code = (zipc.get())
 
- def emergency_contact(self, fn, sn, st, phone, cprov, zipc, rs):
+    def emergency_contact(self, fn, sn, st, phone, cprov, zipc, rs):
         first_name = (fn.get())
         surname = (sn.get())
         phone_number = (phone.get())
@@ -18,3 +18,8 @@ class ContactTracing:
         zip_code = (zipc.get())
         relationship = (rs.get())
 
+    def contacts(self, cfn, csn, cphone, cd):
+        contact_first_name = (cfn.get())
+        contact_surname = (csn.get())
+        contact_phone_number = (cphone.get())
+        contact_date = (cd.get())
