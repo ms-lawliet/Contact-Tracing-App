@@ -53,10 +53,9 @@ def add_entry(fn, ln, ea, pn, ha, cfn, cln, cpn, cha):
         f.write(f"Phone Number: {phone_number}\n")
         f.write(f"Home Address: {home_address}\n")
         f.write("EMERGENCY CONTACT\n")
-        f.write(f"Name: {last_name}, {first_name1}\n")
-        f.write(f"Email Address: {email_address}\n")
-        f.write(f"Phone Number: {phone_number}\n")
-        f.write(f"Home Address: {home_address}\n")
+        f.write(f"Name: {contact_last_name}, {contact_first_name1}\n")
+        f.write(f"Phone Number: {contact_phone_no}\n")
+        f.write(f"Home Address: {contact_home_address}\n")
         f.write("\n")
     CTkMessagebox(title="Notice", message="Entry Added!", icon="check")
 
@@ -96,13 +95,13 @@ address_entry = ctk.CTkEntry(root, textvariable=address, width=275)
 address_entry.place(x=105, y=200)
 
 # create entry buttons for emergency contact info
-first_name2_entry = ctk.CTkEntry(root)
+first_name2_entry = ctk.CTkEntry(root, textvariable=contact_first_name)
 first_name2_entry.place(x=85, y=270)
-surname2_entry = ctk.CTkEntry(root)
+surname2_entry = ctk.CTkEntry(root, textvariable=contact_surname)
 surname2_entry.place(x=85, y=305)
-phone2_entry = ctk.CTkEntry(root, width=175)
+phone2_entry = ctk.CTkEntry(root, textvariable=contact_phone, width=175)
 phone2_entry.place(x=105, y=340)
-address2_entry = ctk.CTkEntry(root, width=275)
+address2_entry = ctk.CTkEntry(root, textvariable=contact_address, width=275)
 address2_entry.place(x=105, y=375)
 
 enter_data = partial(add_entry, first_name, surname, email, phone, address, contact_first_name, contact_surname,
