@@ -30,16 +30,30 @@ surname = ctk.StringVar()
 email = ctk.StringVar()
 phone = ctk.StringVar()
 address = ctk.StringVar()
+contact_first_name = ctk.StringVar()
+contact_surname = ctk.StringVar()
+contact_phone = ctk.StringVar()
+contact_address = ctk.StringVar()
 
 
 # create functions
-def add_entry(fn, ln, ea, pn, ha):
+def add_entry(fn, ln, ea, pn, ha, cfn, cln, cpn, cha):
     first_name1 = fn.get()
     last_name = ln.get()
     email_address = ea.get()
     phone_number = pn.get()
     home_address = ha.get()
+    contact_first_name1 = cfn.get()
+    contact_last_name = cln.get()
+    contact_phone_no = cpn.get()
+    contact_home_address = cha.get()
     with open("data_entries.txt", "a") as f:
+        f.write(f"PERSONAL INFORMATION\n")
+        f.write(f"Name: {last_name}, {first_name1}\n")
+        f.write(f"Email Address: {email_address}\n")
+        f.write(f"Phone Number: {phone_number}\n")
+        f.write(f"Home Address: {home_address}\n")
+        f.write("EMERGENCY CONTACT\n")
         f.write(f"Name: {last_name}, {first_name1}\n")
         f.write(f"Email Address: {email_address}\n")
         f.write(f"Phone Number: {phone_number}\n")
@@ -92,7 +106,8 @@ phone2_entry.place(x=105, y=340)
 address2_entry = ctk.CTkEntry(root, width=275)
 address2_entry.place(x=105, y=375)
 
-enter_data = partial(add_entry, first_name, surname, email, phone, address)
+enter_data = partial(add_entry, first_name, surname, email, phone, address, contact_first_name, contact_surname,
+                     contact_phone, contact_address)
 add_entry_button = ctk.CTkButton(root, text="Add Entry", command=enter_data).grid(row=3, column=0)
 
 root.mainloop()
