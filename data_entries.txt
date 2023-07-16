@@ -11,3 +11,16 @@ Name: Clara, Maria
 Phone Number: 9999
 Home Address: Manila, Philippines
 *************************************
+
+*************************************
+-----PERSONAL INFORMATION-----
+Name: Clara, Maria
+Email Address: mc@gmail.com
+Phone Number: 8888
+Home Address: Manila, Philippines
+-----EMERGENCY CONTACT-----
+Name: Dela Cruz, Juan
+Phone Number: 87000
+Home Address: Manila, Philippines
+Relationship: Father
+*************************************
