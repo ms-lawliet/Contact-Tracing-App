@@ -1,5 +1,4 @@
 # import modules
-import tkinter as tk
 from CTkMessagebox import CTkMessagebox
 import customtkinter as ctk
 from functools import partial
