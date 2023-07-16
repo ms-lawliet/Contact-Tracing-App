@@ -1,12 +1,13 @@
 LIST OF ENTRIES
 
-PERSONAL INFORMATION
-Name: Dela Cruz, Juan
-Email Address: juandc@gmail.com
+*************************************
+-----PERSONAL INFORMATION-----
+Name: Ibarra, Crisostomo
+Email Address: cib@gmail.com
 Phone Number: 87000
-Home Address: Poblacion 4, Moncada, Tarlac
-EMERGENCY CONTACT
-Name: Dela Cruz, Maria
-Phone Number: 888
-Home Address: Burgos, Moncada, Tarlac
-
+Home Address: Manila, Philippines
+-----EMERGENCY CONTACT-----
+Name: Clara, Maria
+Phone Number: 9999
+Home Address: Manila, Philippines
+*************************************
