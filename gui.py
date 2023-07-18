@@ -18,13 +18,13 @@ class OptionsWindow:
     def open_entry_window():
         # new window
         window = ctk.CTkToplevel(root)
-        window.geometry("475x600")
+        window.geometry("875x600")
         window.title("Add Entry")
         root.withdraw()
 
         # create label for title
         title = ctk.CTkLabel(window, text="CONTACT TRACING", font=("Fixedsys", 30), text_color="dodger blue")
-        title.place(x=120, y=5)
+        title.place(x=300, y=5)
 
         # create category labels
         category1 = ctk.CTkLabel(window, text="Personal Information", font=("Fixedsys", 15))
@@ -35,6 +35,7 @@ class OptionsWindow:
         # create variables
         first_name = ctk.StringVar()
         surname = ctk.StringVar()
+        age = ctk.StringVar()
         email = ctk.StringVar()
         phone = ctk.StringVar()
         address = ctk.StringVar()
@@ -45,13 +46,17 @@ class OptionsWindow:
         relationship = ctk.StringVar()
 
         # create labels for personal info
-        personal_info_frame = ctk.CTkFrame(window, width=450, height=180, fg_color="transparent", border_width=1,
+        personal_info_frame = ctk.CTkFrame(window, width=480, height=180, fg_color="transparent", border_width=1,
                                            border_color="dodger blue")
         personal_info_frame.place(x=10, y=55)
         first_name_lbl = ctk.CTkLabel(window, text="First Name", font=("Fixedsys", 12), text_color="dodger blue")
         first_name_lbl.place(x=15, y=60)
         surname_lbl = ctk.CTkLabel(window, text="Surname", font=("Fixedsys", 12), text_color="dodger blue")
         surname_lbl.place(x=15, y=95)
+        gender_lbl = ctk.CTkLabel(window, text="Gender", font=("Fixedsys", 12), text_color="dodger blue")
+        gender_lbl.place(x=250, y=60)
+        age_lbl = ctk.CTkLabel(window, text="Age", font=("Fixedsys", 12), text_color="dodger blue")
+        age_lbl.place(x=270, y=95)
         email_lbl = ctk.CTkLabel(window, text="Email Address", font=("Fixedsys", 12), text_color="dodger blue")
         email_lbl.place(x=15, y=130)
         phone_lbl = ctk.CTkLabel(window, text="Phone Number", font=("Fixedsys", 12), text_color="dodger blue")
@@ -60,7 +65,7 @@ class OptionsWindow:
         address_lbl.place(x=15, y=200)
 
         # create labels for emergency contact info
-        personal_info_frame = ctk.CTkFrame(window, width=450, height=180, fg_color="transparent", border_width=1,
+        personal_info_frame = ctk.CTkFrame(window, width=480, height=180, fg_color="transparent", border_width=1,
                                            border_color="dodger blue")
         personal_info_frame.place(x=10, y=265)
         contact_first_name_lbl = ctk.CTkLabel(window, text="First Name", font=("Fixedsys", 12), text_color="dodger blue")
@@ -79,6 +84,8 @@ class OptionsWindow:
         first_name_entry.place(x=100, y=60)
         surname_entry = ctk.CTkEntry(window, textvariable=surname)
         surname_entry.place(x=85, y=95)
+        age_entry = ctk.CTkEntry(window, textvariable=age, width=40)
+        age_entry.place(x=305, y=95)
         email_entry = ctk.CTkEntry(window, textvariable=email, width=175)
         email_entry.place(x=125, y=130)
         phone_entry = ctk.CTkEntry(window, textvariable=phone, width=175)
@@ -98,10 +105,18 @@ class OptionsWindow:
         relationship_entry = ctk.CTkEntry(window, textvariable=relationship)
         relationship_entry.place(x=120, y=410)
 
+        gender_button = ctk.CTkSegmentedButton(window, values=["Male", "Female", "LGBTQIA+"])
+        gender_button.set("Value 1")
+        gender_button.place(x=305, y=60)
+
+        note = "All information collected shall remain confidential and will be used for safety purposes only."
+        note_lbl = ctk.CTkLabel(window, text=note, font=("Fixedsys", 12))
+        note_lbl.place(x=15, y=450)
+
         enter_data = partial(Options.add_entry, first_name, surname, email, phone, address, contact_first_name,
                              contact_surname, contact_phone, contact_address, relationship)
         add_entry_button = ctk.CTkButton(window, text="Add Entry", command=enter_data)
-        add_entry_button.place(x=95, y=500)
+        add_entry_button.place(x=350, y=500)
 
     @staticmethod
     def search_entry_window():
