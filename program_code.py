@@ -16,7 +16,6 @@ class Options:
         contact_home_address = cha.get()
         relation = rel.get()
         with open("data_entries.txt", "a") as f:
-            f.write(f"\n*************************************\n")
             f.write(f"-----PERSONAL INFORMATION-----\n")
             f.write(f"Name: {last_name}, {first_name1}\n")
             f.write(f"Email Address: {email_address}\n")
@@ -27,6 +26,7 @@ class Options:
             f.write(f"Phone Number: {contact_phone_no}\n")
             f.write(f"Home Address: {contact_home_address}\n")
             f.write(f"Relationship: {relation}\n")
+            f.write(f"=====END=====\n")
             f.write(f"*************************************\n")
         CTkMessagebox(title="Notice", message="Entry Added!", icon="check")
 
@@ -36,8 +36,6 @@ class Options:
             search_first_name = fn.get()
             search_last_name = ln.get()
             name = f"{search_last_name}, {search_first_name}"
-            entries = f.read()
-            if name in entries:
-                print(name)
-            else:
-                print("No data found.")
+            entries = f.readlines()
+            for line in entries:
+                print(line)

@@ -23,13 +23,13 @@ class OptionsWindow:
         root.withdraw()
 
         # create label for title
-        title = ctk.CTkLabel(window, text="CONTACT TRACING")
-        title.place(x=175, y=10)
+        title = ctk.CTkLabel(window, text="CONTACT TRACING", font=("Fixedsys", 30), text_color="dodger blue")
+        title.place(x=120, y=5)
 
         # create category labels
-        category1 = ctk.CTkLabel(window, text="Personal Information")
+        category1 = ctk.CTkLabel(window, text="Personal Information", font=("Fixedsys", 15))
         category1.place(x=5, y=30)
-        category2 = ctk.CTkLabel(window, text="Emergency Contact")
+        category2 = ctk.CTkLabel(window, text="Emergency Contact", font=("Fixedsys", 15))
         category2.place(x=5, y=240)
 
         # create variables
@@ -45,52 +45,58 @@ class OptionsWindow:
         relationship = ctk.StringVar()
 
         # create labels for personal info
-        first_name_lbl = ctk.CTkLabel(window, text="First Name")
+        personal_info_frame = ctk.CTkFrame(window, width=450, height=180, fg_color="transparent", border_width=1,
+                                           border_color="dodger blue")
+        personal_info_frame.place(x=10, y=55)
+        first_name_lbl = ctk.CTkLabel(window, text="First Name", font=("Fixedsys", 12), text_color="dodger blue")
         first_name_lbl.place(x=15, y=60)
-        surname_lbl = ctk.CTkLabel(window, text="Surname")
+        surname_lbl = ctk.CTkLabel(window, text="Surname", font=("Fixedsys", 12), text_color="dodger blue")
         surname_lbl.place(x=15, y=95)
-        email_lbl = ctk.CTkLabel(window, text="Email Address")
+        email_lbl = ctk.CTkLabel(window, text="Email Address", font=("Fixedsys", 12), text_color="dodger blue")
         email_lbl.place(x=15, y=130)
-        phone_lbl = ctk.CTkLabel(window, text="Phone Number")
+        phone_lbl = ctk.CTkLabel(window, text="Phone Number", font=("Fixedsys", 12), text_color="dodger blue")
         phone_lbl.place(x=15, y=165)
-        address_lbl = ctk.CTkLabel(window, text="Home Address")
+        address_lbl = ctk.CTkLabel(window, text="Home Address", font=("Fixedsys", 12), text_color="dodger blue")
         address_lbl.place(x=15, y=200)
 
         # create labels for emergency contact info
-        contact_first_name_lbl = ctk.CTkLabel(window, text="First Name")
+        personal_info_frame = ctk.CTkFrame(window, width=450, height=180, fg_color="transparent", border_width=1,
+                                           border_color="dodger blue")
+        personal_info_frame.place(x=10, y=265)
+        contact_first_name_lbl = ctk.CTkLabel(window, text="First Name", font=("Fixedsys", 12), text_color="dodger blue")
         contact_first_name_lbl.place(x=15, y=270)
-        contact_surname_lbl = ctk.CTkLabel(window, text="Surname")
+        contact_surname_lbl = ctk.CTkLabel(window, text="Surname", font=("Fixedsys", 12), text_color="dodger blue")
         contact_surname_lbl.place(x=15, y=305)
-        contact_phone_lbl = ctk.CTkLabel(window, text="Phone Number")
+        contact_phone_lbl = ctk.CTkLabel(window, text="Phone Number", font=("Fixedsys", 12), text_color="dodger blue")
         contact_phone_lbl.place(x=15, y=340)
-        contact_address_lbl = ctk.CTkLabel(window, text="Home Address")
+        contact_address_lbl = ctk.CTkLabel(window, text="Home Address", font=("Fixedsys", 12), text_color="dodger blue")
         contact_address_lbl.place(x=15, y=375)
-        relationship_lbl = ctk.CTkLabel(window, text="Relationship")
+        relationship_lbl = ctk.CTkLabel(window, text="Relationship", font=("Fixedsys", 12), text_color="dodger blue")
         relationship_lbl.place(x=15, y=410)
 
         # create entry buttons for personal info
         first_name_entry = ctk.CTkEntry(window, textvariable=first_name)
-        first_name_entry.place(x=85, y=60)
+        first_name_entry.place(x=100, y=60)
         surname_entry = ctk.CTkEntry(window, textvariable=surname)
         surname_entry.place(x=85, y=95)
         email_entry = ctk.CTkEntry(window, textvariable=email, width=175)
-        email_entry.place(x=105, y=130)
+        email_entry.place(x=125, y=130)
         phone_entry = ctk.CTkEntry(window, textvariable=phone, width=175)
-        phone_entry.place(x=105, y=165)
+        phone_entry.place(x=120, y=165)
         address_entry = ctk.CTkEntry(window, textvariable=address, width=275)
-        address_entry.place(x=105, y=200)
+        address_entry.place(x=120, y=200)
 
         # create entry buttons for emergency contact info
         contact_first_name_entry = ctk.CTkEntry(window, textvariable=contact_first_name)
-        contact_first_name_entry.place(x=85, y=270)
+        contact_first_name_entry.place(x=100, y=270)
         contact_surname_entry = ctk.CTkEntry(window, textvariable=contact_surname)
         contact_surname_entry.place(x=85, y=305)
         contact_phone_entry = ctk.CTkEntry(window, textvariable=contact_phone, width=175)
-        contact_phone_entry.place(x=105, y=340)
+        contact_phone_entry.place(x=120, y=340)
         contact_address_entry = ctk.CTkEntry(window, textvariable=contact_address, width=275)
-        contact_address_entry.place(x=105, y=375)
+        contact_address_entry.place(x=120, y=375)
         relationship_entry = ctk.CTkEntry(window, textvariable=relationship)
-        relationship_entry.place(x=105, y=410)
+        relationship_entry.place(x=120, y=410)
 
         enter_data = partial(Options.add_entry, first_name, surname, email, phone, address, contact_first_name,
                              contact_surname, contact_phone, contact_address, relationship)
@@ -122,9 +128,12 @@ class OptionsWindow:
         search_entry_button.place(x=85, y=150)
 
 
-add_button = ctk.CTkButton(root, text="Add Entry", command=OptionsWindow.open_entry_window)
-add_button.place(x=85, y=90)
-search_button = ctk.CTkButton(root, text="Search Entry", command=OptionsWindow.search_entry_window)
-search_button.place(x=85, y=120)
+title_lbl = ctk.CTkLabel(root, text="CONTACT\nTRACING", font=("Fixedsys", 35), text_color="dodger blue")
+title_lbl.place(x=70, y=60)
+
+add_button = ctk.CTkButton(root, text="ADD ENTRY", font=("Fixedsys", 10), command=OptionsWindow.open_entry_window)
+add_button.place(x=85, y=160)
+search_button = ctk.CTkButton(root, text="SEARCH ENTRY", font=("Fixedsys", 10), command=OptionsWindow.search_entry_window)
+search_button.place(x=85, y=195)
 
 root.mainloop()
