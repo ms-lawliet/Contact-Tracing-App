@@ -23,4 +23,44 @@ Name: Dela Cruz, Juan
 Phone Number: 87000
 Home Address: Manila, Philippines
 Relationship: Father
+------END------
+*************************************
+
+*************************************
+-----PERSONAL INFORMATION-----
+Name: , 
+Email Address: 
+Phone Number: 
+Home Address: 
+-----EMERGENCY CONTACT-----
+Name: , 
+Phone Number: 
+Home Address: 
+Relationship: 
+*************************************
+
+*************************************
+-----PERSONAL INFORMATION-----
+Name: Dela Cruz, Juan
+Email Address: jdc@gmail.com
+Phone Number: 8888
+Home Address: Manila
+-----EMERGENCY CONTACT-----
+Name: Clara, Maria
+Phone Number: 999
+Home Address: Manila
+Relationship: Mother
+*************************************
+
+*************************************
+-----PERSONAL INFORMATION-----
+Name: , 
+Email Address: 
+Phone Number: 
+Home Address: 
+-----EMERGENCY CONTACT-----
+Name: , 
+Phone Number: 
+Home Address: 
+Relationship: 
 *************************************
