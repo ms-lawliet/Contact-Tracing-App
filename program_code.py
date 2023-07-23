@@ -4,7 +4,7 @@ from CTkMessagebox import CTkMessagebox
 class Options:
     # create functions
     @staticmethod
-    def add_entry(fn, ln, age, gdr, ea, pn, ha, cfn, cln, cpn, cha, rel, oot, cty, sop):
+    def add_entry(fn, ln, age, gdr, ea, pn, ha, cfn, cln, cpn, cha, rel, oot, cty, sop, acn, aca, acd):
         first_name1 = fn.get()
         last_name = ln.get()
         age1 = age.get()
@@ -20,11 +20,13 @@ class Options:
         overseas_travel = oot.get()
         country = cty.get()
         situation = sop.get()
+        additional_contact_name = acn.get()
+        additional_contact_address = aca.get()
+        additional_contact_date = acd.get()
         name = f"{last_name}, {first_name1}"
         file_name = f"Data Entries/{name}.txt"
         try:
             with open(file_name, "x") as f:
-                f.write(f"*************************************\n")
                 f.write(f"-----PERSONAL INFORMATION-----\n")
                 f.write(f"Name: {last_name}, {first_name1}\n")
                 f.write(f"Gender: {gender}\n")
@@ -41,10 +43,28 @@ class Options:
                 f.write(f"Has visited another country in the last two months? {overseas_travel}\n")
                 f.write(f"Country visited: {country}\n")
                 f.write(f"Status: {situation}\n")
-                f.write(f"*************************************\n")
+                f.write("---Recent Contacts---\n")
+                f.write(f"Name: {additional_contact_name}\n")
+                f.write(f"Address: {additional_contact_address}\n")
+                f.write(f"Date of Contact: {additional_contact_date}\n")
             CTkMessagebox(title="Notice", message="Entry Added!", icon="check")
         except FileExistsError:
             CTkMessagebox(title="Notice", message="Entry Already Exists!", icon="cancel")
+
+    @staticmethod
+    def additional_contact(fn, ln, cn, cad, cd):
+        first_name1 = fn.get()
+        last_name = ln.get()
+        additional_contact_name = cn.get()
+        additional_contact_address = cad.get()
+        additional_contact_date = cd.get()
+        name = f"{last_name}, {first_name1}"
+        file_name = f"Data Entries/{name}.txt"
+        with open(file_name, "a") as f:
+            f.write("-------------------------\n")
+            f.write(f"Name: {additional_contact_name}\n")
+            f.write(f"Address: {additional_contact_address}\n")
+            f.write(f"Date of Contact: {additional_contact_date}\n")
 
     @staticmethod
     def search_entry(fn, ln):

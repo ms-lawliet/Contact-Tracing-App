@@ -1,0 +1,20 @@
+-----PERSONAL INFORMATION-----
+Name: Ibarra, Crisostomo
+Gender: Not specified
+Age: 22
+Email Address: cib@gmail.com
+Phone Number: 09887259876
+Home Address: Quezon City, Manila
+-----EMERGENCY CONTACT-----
+Name: Clara, Maria
+Phone Number: 097256418896
+Home Address: Quezon City, Manila
+Relationship: Wife
+-----DETAILS-----
+Has visited another country in the last two months? Yes
+Country visited: Brazil
+Status: Diagnosed with Coronavirus
+-----RECENT CONTACTS-----
+Name: Juan Elias
+Address: Pateros, Manila
+Date of Contact: 11/25/23

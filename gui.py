@@ -1,5 +1,6 @@
 # import modules
 import customtkinter as ctk
+from CTkMessagebox import CTkMessagebox
 from functools import partial
 from program_code import Options
 
@@ -26,10 +27,12 @@ class OptionsWindow:
         title.place(x=300, y=5)
 
         # create category labels
-        category1 = ctk.CTkLabel(window, text="Personal Information", font=("FixedSys", 15))
-        category1.place(x=5, y=30)
-        category2 = ctk.CTkLabel(window, text="Emergency Contact", font=("FixedSys", 15))
-        category2.place(x=5, y=240)
+        category1_lbl = ctk.CTkLabel(window, text="Personal Information", font=("FixedSys", 15))
+        category1_lbl.place(x=5, y=30)
+        category2_lbl = ctk.CTkLabel(window, text="Emergency Contact", font=("FixedSys", 15))
+        category2_lbl.place(x=5, y=240)
+        category3_lbl = ctk.CTkLabel(window, text="Recent Contacts", font=("FixedSys", 15), text_color="white")
+        category3_lbl.place(x=500, y=305)
 
         # create variables
         first_name = ctk.StringVar()
@@ -47,6 +50,12 @@ class OptionsWindow:
         overseas_options = ctk.StringVar(value="No")
         country_traveled = ctk.StringVar()
         situation_options = ctk.StringVar(value="Diagnosed with Coronavirus")
+        recent_contact_name = ctk.StringVar()
+        recent_contact_address = ctk.StringVar()
+        recent_contact_date = ctk.StringVar()
+        other_contact_name = ctk.StringVar()
+        other_contact_address = ctk.StringVar()
+        other_contact_date = ctk.StringVar()
 
         # create labels for personal info
         personal_info_frame = ctk.CTkFrame(window, width=480, height=180, fg_color="transparent", border_width=1,
@@ -83,6 +92,16 @@ class OptionsWindow:
         relationship_lbl.place(x=15, y=410)
 
         # create labels for other questions
+        recent_contact_frame = ctk.CTkFrame(window, width=350, height=115, fg_color="transparent", border_width=1,
+                                           border_color="dodger blue")
+        recent_contact_frame.place(x=500, y=330)
+        recent_contact_name_lbl = ctk.CTkLabel(window, text="Name", font=("FixedSys", 12), text_color="dodger blue")
+        recent_contact_name_lbl.place(x=520, y=340)
+        recent_contact_address_lbl = ctk.CTkLabel(window, text="Address", font=("FixedSys", 12), text_color="dodger blue")
+        recent_contact_address_lbl.place(x=520, y=375)
+        recent_contact_date_lbl = ctk.CTkLabel(window, text="Date of Contact", font=("FixedSys", 12), text_color="dodger blue")
+        recent_contact_date_lbl.place(x=520, y=410)
+
         # for overseas travel question
         overseas_frame = ctk.CTkFrame(window, width=350, height=70, fg_color="transparent", border_width=1,
                                            border_color="dodger blue")
@@ -132,6 +151,13 @@ class OptionsWindow:
         contact_address_entry.place(x=120, y=375)
         relationship_entry = ctk.CTkEntry(window, textvariable=relationship)
         relationship_entry.place(x=120, y=410)
+
+        recent_contact_name_entry = ctk.CTkEntry(window, textvariable=recent_contact_name, width=215)
+        recent_contact_name_entry.place(x=560, y=340)
+        recent_contact_address_entry = ctk.CTkEntry(window, textvariable=recent_contact_address, width=245)
+        recent_contact_address_entry.place(x=585, y=375)
+        recent_contact_date_entry = ctk.CTkEntry(window, textvariable=recent_contact_date, width=155)
+        recent_contact_date_entry.place(x=645, y=410)
 
         gender_button = ctk.CTkSegmentedButton(window, values=["Male", "Female", "LGBTQIA+"], variable=gender)
         gender_button.set("Not specified")
@@ -204,14 +230,44 @@ class OptionsWindow:
         situation_option2 = ctk.CTkRadioButton(window, text=option2, variable=situation_options, value=option2)
         situation_option2.place(x=550, y=275)
 
+        def add_contact_window():
+            contact_window = ctk.CTkToplevel(window)
+            contact_window.title("Add Contact")
+            contact_window.geometry("400x200")
+
+            add_contact_lbl = ctk.CTkLabel(contact_window, text="ADD CONTACT", font=("FixedSys", 25), text_color="white")
+            add_contact_lbl.place(x=105, y=0)
+            other_contact_name_lbl = ctk.CTkLabel(contact_window, text="Name", font=("FixedSys", 12), text_color="dodger blue")
+            other_contact_name_lbl.place(x=15, y=40)
+            other_contact_address_lbl = ctk.CTkLabel(contact_window, text="Address", font=("FixedSys", 12), text_color="dodger blue")
+            other_contact_address_lbl.place(x=15, y=75)
+            other_contact_date_lbl = ctk.CTkLabel(contact_window, text="Date of Contact", font=("FixedSys", 12), text_color="dodger blue")
+            other_contact_date_lbl.place(x=15, y=110)
+
+            other_contact_name_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_name)
+            other_contact_name_entry.place(x=90, y=40)
+            other_contact_address_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_address, width=175)
+            other_contact_address_entry.place(x=90, y=75)
+            other_contact_date_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_date, width=175)
+            other_contact_date_entry.place(x=140, y=110)
+
+            enter_contact_data = partial(Options.additional_contact, first_name, surname, other_contact_name,
+                                         other_contact_address, other_contact_date)
+            add_other_contact = ctk.CTkButton(contact_window, text="Add", command=enter_contact_data)
+            add_other_contact.place(x=118, y=150)
+
+        add_contact = ctk.CTkButton(window, text="Add More Contacts", command=add_contact_window)
+        add_contact.place(x=500, y=520)
+
         note = "Please fill out this form to help us track your contact history. \n" \
                "All information collected shall remain confidential and will be used for safety purposes only."
         note_lbl = ctk.CTkLabel(window, text=note, font=("FixedSys", 12))
-        note_lbl.place(x=15, y=470)
+        note_lbl.place(x=50, y=470)
 
         enter_data = partial(Options.add_entry, first_name, surname, age, gender, email, phone, address,
                              contact_first_name, contact_surname, contact_phone, contact_address, relationship,
-                             overseas_options, country_traveled, situation_options)
+                             overseas_options, country_traveled, situation_options, recent_contact_name,
+                             recent_contact_address, recent_contact_date)
         add_entry_button = ctk.CTkButton(window, text="Add Entry", command=enter_data)
         add_entry_button.place(x=350, y=520)
 
