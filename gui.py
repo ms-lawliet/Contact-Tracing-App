@@ -35,6 +35,7 @@ class OptionsWindow:
         first_name = ctk.StringVar()
         surname = ctk.StringVar()
         age = ctk.StringVar()
+        gender = ctk.StringVar()
         email = ctk.StringVar()
         phone = ctk.StringVar()
         address = ctk.StringVar()
@@ -43,6 +44,8 @@ class OptionsWindow:
         contact_phone = ctk.StringVar()
         contact_address = ctk.StringVar()
         relationship = ctk.StringVar()
+        overseas_options = ctk.StringVar(value="No")
+        country_traveled = ctk.StringVar()
 
         # create labels for personal info
         personal_info_frame = ctk.CTkFrame(window, width=480, height=180, fg_color="transparent", border_width=1,
@@ -89,7 +92,7 @@ class OptionsWindow:
 
         # for country traveled question
         travel_frame = ctk.CTkFrame(window, width=350, height=75, fg_color="transparent", border_width=1,
-                                      border_color="dodger blue")
+                                    border_color="dodger blue")
         travel_frame.place(x=500, y=130)
         travel_country_lbl = ctk.CTkLabel(window, text="If yes, please select country. \n If no, choose N/A.",
                                           font=("FixedSys", 12), text_color="dodger blue")
@@ -129,14 +132,13 @@ class OptionsWindow:
         relationship_entry = ctk.CTkEntry(window, textvariable=relationship)
         relationship_entry.place(x=120, y=410)
 
-        gender_button = ctk.CTkSegmentedButton(window, values=["Male", "Female", "LGBTQIA+"])
-        gender_button.set("Value 1")
+        gender_button = ctk.CTkSegmentedButton(window, values=["Male", "Female", "LGBTQIA+"], variable=gender)
+        gender_button.set("Not specified")
         gender_button.place(x=305, y=60)
 
-        overseas_options = ctk.IntVar(value=0)
-        overseas_yes = ctk.CTkRadioButton(window, text="Yes", variable=overseas_options, value=1)
+        overseas_yes = ctk.CTkRadioButton(window, text="Yes", variable=overseas_options, value="Yes")
         overseas_yes.place(x=600, y=95)
-        overseas_no = ctk.CTkRadioButton(window, text="No", variable=overseas_options, value=2)
+        overseas_no = ctk.CTkRadioButton(window, text="No", variable=overseas_options, value="No")
         overseas_no.place(x=690, y=95)
 
         travel_country = ctk.CTkOptionMenu(window, values=['N/A', 'Afghanistan', 'Aland Islands', 'Albania', 'Algeria',
@@ -187,7 +189,7 @@ class OptionsWindow:
                                                            'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan',
                                                            'Vanuatu', 'Venezuela', 'Vietnam', 'Virgin Islands, British',
                                                            'Virgin Islands, U.S.', 'Wallis and Futuna', 'Yemen', 'Zambia',
-                                                           'Zimbabwe'])
+                                                           'Zimbabwe'], variable=country_traveled)
 
         travel_country.pack(padx=20, pady=10)
         travel_country.set("N/A")
@@ -197,10 +199,11 @@ class OptionsWindow:
         note = "Please fill out this form to help us track your contact history. \n" \
                "All information collected shall remain confidential and will be used for safety purposes only."
         note_lbl = ctk.CTkLabel(window, text=note, font=("FixedSys", 12))
-        note_lbl.place(x=15, y=450)
+        note_lbl.place(x=15, y=470)
 
-        enter_data = partial(Options.add_entry, first_name, surname, email, phone, address, contact_first_name,
-                             contact_surname, contact_phone, contact_address, relationship)
+        enter_data = partial(Options.add_entry, first_name, surname, age, gender, email, phone, address,
+                             contact_first_name, contact_surname, contact_phone, contact_address, relationship,
+                             overseas_options, country_traveled)
         add_entry_button = ctk.CTkButton(window, text="Add Entry", command=enter_data)
         add_entry_button.place(x=350, y=500)
 
