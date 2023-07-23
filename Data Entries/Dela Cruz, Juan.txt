@@ -1,24 +1,20 @@
 -----PERSONAL INFORMATION-----
-Name: Ibarra, Crisostomo
+Name: Dela Cruz, Juan
 Gender: Male
 Age: 25
-Email Address: cib@gmail.com
-Phone Number: 09887654556
+Email Address: jdc@gmail.com
+Phone Number: 09785561334
 Home Address: 1660 J. Luna Street, Manila, Metro Manila
 -----EMERGENCY CONTACT-----
 Name: Clara, Maria
-Phone Number: 09765543221
+Phone Number: 09786654224
 Home Address: 1660 J. Luna Street, Manila, Metro Manila
-Relationship: Wife
+Relationship: Sister
 -----DETAILS-----
 Has visited another country in the last two months? Yes
-Country visited: Canada
+Country visited: France
 Status: Shows symptoms of Coronavirus
 ---Recent Contacts---
-Name: Juan Dela Cruz
+Name: Crisostomo Ibarra
 Address: 1660 J. Luna Street, Manila, Metro Manila
-Date of Contact: 12/23/23
--------------------------
-Name: Elias Dela Cruz
-Address: J. Luna St., Quezon City
-Date of Contact: 12/24/22
+Date of Contact: 12/31/23
