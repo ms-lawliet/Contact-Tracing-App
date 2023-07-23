@@ -8,7 +8,7 @@ ctk.set_appearance_mode("dark")
 
 # create method
 root = ctk.CTk()
-root.geometry("300x300")
+root.geometry("300x300+500+150")
 root.title("Contact Tracing App")
 
 
@@ -17,7 +17,7 @@ class OptionsWindow:
     def open_entry_window():
         # new window
         window = ctk.CTkToplevel(root)
-        window.geometry("875x600")
+        window.geometry("875x600+250+50")
         window.title("Add Entry")
         root.withdraw()
 
@@ -232,7 +232,8 @@ class OptionsWindow:
         def add_contact_window():
             contact_window = ctk.CTkToplevel(window)
             contact_window.title("Add Contact")
-            contact_window.geometry("400x200")
+            contact_window.geometry("400x200+500+150")
+            contact_window.attributes('-topmost', 'true')
 
             add_contact_lbl = ctk.CTkLabel(contact_window, text="ADD CONTACT", font=("FixedSys", 25), text_color="white")
             add_contact_lbl.place(x=105, y=0)
@@ -279,7 +280,7 @@ class OptionsWindow:
     def search_entry_window():
         root.withdraw()
         window2 = ctk.CTkToplevel(root)
-        window2.geometry("300x300")
+        window2.geometry("300x300+500+150")
         window2.title("Search Entry")
 
         first_name = ctk.StringVar()
