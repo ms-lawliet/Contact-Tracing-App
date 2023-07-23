@@ -244,9 +244,9 @@ class OptionsWindow:
             other_contact_date_lbl = ctk.CTkLabel(contact_window, text="Date of Contact", font=("FixedSys", 12), text_color="dodger blue")
             other_contact_date_lbl.place(x=15, y=110)
 
-            other_contact_name_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_name)
+            other_contact_name_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_name, width=200)
             other_contact_name_entry.place(x=90, y=40)
-            other_contact_address_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_address, width=175)
+            other_contact_address_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_address, width=275)
             other_contact_address_entry.place(x=90, y=75)
             other_contact_date_entry = ctk.CTkEntry(contact_window, textvariable=other_contact_date, width=175)
             other_contact_date_entry.place(x=140, y=110)
