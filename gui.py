@@ -1,6 +1,5 @@
 # import modules
 import customtkinter as ctk
-from CTkMessagebox import CTkMessagebox
 from functools import partial
 from program_code import Options
 
@@ -256,20 +255,25 @@ class OptionsWindow:
             add_other_contact = ctk.CTkButton(contact_window, text="Add", command=enter_contact_data)
             add_other_contact.place(x=118, y=150)
 
-        add_contact = ctk.CTkButton(window, text="Add More Contacts", command=add_contact_window)
-        add_contact.place(x=500, y=520)
-
         note = "Please fill out this form to help us track your contact history. \n" \
                "All information collected shall remain confidential and will be used for safety purposes only."
         note_lbl = ctk.CTkLabel(window, text=note, font=("FixedSys", 12))
         note_lbl.place(x=50, y=470)
 
+        def return_to_first_window():
+            window.destroy()
+            root.deiconify()
+
         enter_data = partial(Options.add_entry, first_name, surname, age, gender, email, phone, address,
                              contact_first_name, contact_surname, contact_phone, contact_address, relationship,
                              overseas_options, country_traveled, situation_options, recent_contact_name,
                              recent_contact_address, recent_contact_date)
-        add_entry_button = ctk.CTkButton(window, text="Add Entry", command=enter_data)
+        add_entry_button = ctk.CTkButton(window, text="Add Entry", font=("FixedSys", 10), command=enter_data)
         add_entry_button.place(x=350, y=520)
+        add_contact = ctk.CTkButton(window, text="Add More Contacts", font=("FixedSys", 10), command=add_contact_window)
+        add_contact.place(x=500, y=520)
+        return_button = ctk.CTkButton(window, text="Back", font=("FixedSys", 10), command=return_to_first_window)
+        return_button.place(x=200, y=520)
 
     @staticmethod
     def search_entry_window():
@@ -281,19 +285,28 @@ class OptionsWindow:
         first_name = ctk.StringVar()
         surname = ctk.StringVar()
 
-        first_name_lbl = ctk.CTkLabel(window2, text="First Name")
-        first_name_lbl.place(x=15, y=60)
-        surname_lbl = ctk.CTkLabel(window2, text="Surname")
-        surname_lbl.place(x=15, y=95)
+        search_lbl = ctk.CTkLabel(window2, text="SEARCH ENTRY", font=("FixedSys", 25), text_color="white")
+        search_lbl.place(x=60, y=50)
+
+        first_name_lbl = ctk.CTkLabel(window2, text="First\nName", font=("FixedSys", 15), text_color="dodger blue")
+        first_name_lbl.place(x=40, y=110)
+        surname_lbl = ctk.CTkLabel(window2, text="Surname", font=("FixedSys", 15), text_color="dodger blue")
+        surname_lbl.place(x=25, y=145)
 
         first_name_entry = ctk.CTkEntry(window2, textvariable=first_name)
-        first_name_entry.place(x=85, y=60)
+        first_name_entry.place(x=85, y=110)
         surname_entry = ctk.CTkEntry(window2, textvariable=surname)
-        surname_entry.place(x=85, y=95)
+        surname_entry.place(x=85, y=145)
+
+        def return_to_first_window():
+            window2.destroy()
+            root.deiconify()
 
         search_data = partial(Options.search_entry, first_name, surname)
-        search_entry_button = ctk.CTkButton(window2, text="Search Entry", command=search_data)
-        search_entry_button.place(x=85, y=150)
+        search_entry_button = ctk.CTkButton(window2, text="Search Entry", font=("FixedSys", 10), command=search_data)
+        search_entry_button.place(x=85, y=220)
+        return_button = ctk.CTkButton(window2, text="Back", font=("FixedSys", 10), command=return_to_first_window)
+        return_button.place(x=85, y=255)
 
 
 title_lbl = ctk.CTkLabel(root, text="CONTACT\nTRACING", font=("FixedSys", 35), text_color="dodger blue")

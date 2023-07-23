@@ -65,6 +65,7 @@ class Options:
             f.write(f"Name: {additional_contact_name}\n")
             f.write(f"Address: {additional_contact_address}\n")
             f.write(f"Date of Contact: {additional_contact_date}\n")
+        CTkMessagebox(title="Notice", message="Entry Already Exists!", icon="cancel")
 
     @staticmethod
     def search_entry(fn, ln):
