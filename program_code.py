@@ -4,7 +4,7 @@ from CTkMessagebox import CTkMessagebox
 class Options:
     # create functions
     @staticmethod
-    def add_entry(fn, ln, age, gdr, ea, pn, ha, cfn, cln, cpn, cha, rel, oot, cty):
+    def add_entry(fn, ln, age, gdr, ea, pn, ha, cfn, cln, cpn, cha, rel, oot, cty, sop):
         first_name1 = fn.get()
         last_name = ln.get()
         age1 = age.get()
@@ -19,6 +19,7 @@ class Options:
         relation = rel.get()
         overseas_travel = oot.get()
         country = cty.get()
+        situation = sop.get()
         name = f"{last_name}, {first_name1}"
         file_name = f"Data Entries/{name}.txt"
         try:
@@ -39,6 +40,7 @@ class Options:
                 f.write("-----DETAILS-----\n")
                 f.write(f"Has visited another country in the last two months? {overseas_travel}\n")
                 f.write(f"Country visited: {country}\n")
+                f.write(f"Status: {situation}\n")
                 f.write(f"*************************************\n")
             CTkMessagebox(title="Notice", message="Entry Added!", icon="check")
         except FileExistsError:

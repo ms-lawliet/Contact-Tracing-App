@@ -211,7 +211,7 @@ class OptionsWindow:
 
         enter_data = partial(Options.add_entry, first_name, surname, age, gender, email, phone, address,
                              contact_first_name, contact_surname, contact_phone, contact_address, relationship,
-                             overseas_options, country_traveled)
+                             overseas_options, country_traveled, situation_options)
         add_entry_button = ctk.CTkButton(window, text="Add Entry", command=enter_data)
         add_entry_button.place(x=350, y=520)
 
