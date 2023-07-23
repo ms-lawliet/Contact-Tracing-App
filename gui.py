@@ -46,6 +46,7 @@ class OptionsWindow:
         relationship = ctk.StringVar()
         overseas_options = ctk.StringVar(value="No")
         country_traveled = ctk.StringVar()
+        situation_options = ctk.StringVar(value="Diagnosed with Coronavirus")
 
         # create labels for personal info
         personal_info_frame = ctk.CTkFrame(window, width=480, height=180, fg_color="transparent", border_width=1,
@@ -99,12 +100,12 @@ class OptionsWindow:
         travel_country_lbl.place(x=555, y=135)
 
         # for positive or symptomatic question
-        travel_frame = ctk.CTkFrame(window, width=350, height=75, fg_color="transparent", border_width=1,
-                                    border_color="dodger blue")
-        travel_frame.place(x=500, y=130)
-        travel_country_lbl = ctk.CTkLabel(window, text="If yes, please select country. \n If no, choose N/A.",
-                                          font=("FixedSys", 12), text_color="dodger blue")
-        travel_country_lbl.place(x=555, y=135)
+        situation_frame = ctk.CTkFrame(window, width=350, height=95, fg_color="transparent", border_width=1,
+                                      border_color="dodger blue")
+        situation_frame.place(x=500, y=210)
+        situation_lbl = ctk.CTkLabel(window, text="Please select the option that applies \n"
+                                                  "to your situation", font=("FixedSys", 12), text_color="dodger blue")
+        situation_lbl.place(x=525, y=215)
 
         # create entry buttons for personal info
         first_name_entry = ctk.CTkEntry(window, textvariable=first_name)
@@ -196,6 +197,13 @@ class OptionsWindow:
 
         travel_country.place(x=600, y=170)
 
+        option1 = "Diagnosed with Coronavirus"
+        option2 = "Shows symptoms of Coronavirus"
+        situation_option1 = ctk.CTkRadioButton(window, text=option1, variable=situation_options, value=option1)
+        situation_option1.place(x=550, y=250)
+        situation_option2 = ctk.CTkRadioButton(window, text=option2, variable=situation_options, value=option2)
+        situation_option2.place(x=550, y=275)
+
         note = "Please fill out this form to help us track your contact history. \n" \
                "All information collected shall remain confidential and will be used for safety purposes only."
         note_lbl = ctk.CTkLabel(window, text=note, font=("FixedSys", 12))
@@ -205,7 +213,7 @@ class OptionsWindow:
                              contact_first_name, contact_surname, contact_phone, contact_address, relationship,
                              overseas_options, country_traveled)
         add_entry_button = ctk.CTkButton(window, text="Add Entry", command=enter_data)
-        add_entry_button.place(x=350, y=500)
+        add_entry_button.place(x=350, y=520)
 
     @staticmethod
     def search_entry_window():
