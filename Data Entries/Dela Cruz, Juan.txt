@@ -3,12 +3,12 @@ Name: Dela Cruz, Juan
 Gender: Male
 Age: 25
 Email Address: jdc@gmail.com
-Phone Number: 09785561334
-Home Address: 1660 J. Luna Street, Manila, Metro Manila
+Phone Number: 09876654334
+Home Address: 1660 J. Luna St., Manila, Metro Manila
 -----EMERGENCY CONTACT-----
 Name: Clara, Maria
-Phone Number: 09786654224
-Home Address: 1660 J. Luna Street, Manila, Metro Manila
+Phone Number: 09657743223
+Home Address: 1660 J. Luna St., Manila, Metro Manila
 Relationship: Sister
 -----DETAILS-----
 Has visited another country in the last two months? Yes
@@ -16,5 +16,9 @@ Country visited: France
 Status: Shows symptoms of Coronavirus
 ---Recent Contacts---
 Name: Crisostomo Ibarra
-Address: 1660 J. Luna Street, Manila, Metro Manila
-Date of Contact: 12/31/23
+Address: 1660 J. Luna St., Manila, Metro Manila
+Date of Contact: 04/29/23
+-------------------------
+Name: Elias Dela Cruz
+Address: 1660 J. Luna St., Manila, Metro Manila
+Date of Contact: 04/28/23
